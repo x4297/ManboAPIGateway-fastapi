@@ -1,0 +1,35 @@
+class BaseConfig:
+    application_name: str
+    authentication: dict[str, str]
+    allowed_ips: set[str]
+
+    throttle_ip_limit: int  # xx times
+    throttle_ip_duration: int  # per xx seconds
+    throttle_mobile_limit: int  # xx times
+    throttle_mobile_duration: int  # per xx seconds
+    
+    # TODO: message gateway parameters
+    up_pararm = None
+
+
+class CommonConfig:
+    url_send_message = "http://127.0.0.1:12345/send"
+    appid = "sms-appid"
+    secret = "sms-secretkey"
+
+    host = "127.0.0.1"
+    port = 14251
+    workers = 4
+
+    debug = False
+    db_url = "postgresql+asyncpg://postgres:123%40abc@127.0.0.1:5432/mytest"
+
+
+class App1Config(BaseConfig):
+    authentication = {
+        "723d4477-797b-4ccb-9456-49fa8d93a9f6": "a3aa249e-3c54-41c5-8c0b-b178e100205b-2cbf2c0a-e1c7-480b-8ee1-937"
+    }
+
+    allowed_ips = {
+        "127.0.0.1"
+    }

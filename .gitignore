@@ -1,0 +1,6 @@
+/.venv/
+/migrations/versions/*
+**/__pycache__/
+**/.vscode/
+**/.idea/
+/private_settings.py
